@@ -12,8 +12,12 @@ const AddTodo = () => {
   const onChangeInputHandler = input => setInput(input);
 
   const addTodoHandler = () => {
-    dispatch(addTodo({input}));
-    setInput('');
+    if (input.length <= 0) {
+      alert('Todo input is empty, please write some text.');
+    } else {
+      dispatch(addTodo({input}));
+      setInput('');
+    }
   };
 
   return (
