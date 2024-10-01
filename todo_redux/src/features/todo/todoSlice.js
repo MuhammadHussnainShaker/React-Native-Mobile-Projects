@@ -8,7 +8,7 @@ export const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       const todo = {
-        id: nanoid(),
+        id: nanoid(), // generates a unique id for the todo item
         text: action.payload.input,
       };
       state.todos.push(todo);
